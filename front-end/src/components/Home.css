@@ -1,0 +1,259 @@
+/* Home Page Specific Styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.home-page-body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: linear-gradient(45deg, #0A2540, #1D4E89, #3A7CA5, #5693ba, #8dbedc, #6ca0dc, #3a8fdd);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #1D4E89; /* Medium Blue */
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-btn {
+  background-color: #3A7CA5; /* Sky Blue */
+  border: none;
+  color: #F0F8FF; /* Alice Blue */
+  padding: 12px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-btn:hover {
+  background-color: #5DADE2; /* Light Blue */
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #3A7CA5, 0 0 20px #3A7CA5;
+}
+
+/* Main Container */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 70px; /* Space for fixed navbar */
+}
+
+/* Section Styling */
+.welcome-section,
+.features-section,
+.team-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.home-h1-welcome-text {
+  color: #5DADE2; /* Light Blue */
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.home-h2-section-title {
+  color: #aedfff; /* Sky Blue */
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 2px 2px 10px #1D4E89;
+}
+
+.home-paragraph {
+  color: #F0F8FF; /* Alice Blue */
+  font-size: 18px;
+  margin: 0 20px;
+  line-height: 1.6;
+}
+
+/* Team Section */
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.team-member-card {
+  background-color: #1D4E89; /* Medium Blue */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 200px;
+  border: 4px solid #3A7CA5;
+  background: rgba(29, 78, 137, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.team-member-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(58, 124, 165, 0.4);
+}
+
+.team-member-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #5DADE2;
+  object-fit: cover;
+}
+
+.team-member-name {
+  color: #5DADE2; /* Light Blue */
+  font-size: 20px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.team-member-links a {
+  color: #5DADE2; /* Light Blue */
+  text-decoration: none;
+  margin: 5px;
+  font-size: 14px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.team-member-links a:hover {
+  text-decoration: underline;
+  color: #A9CCE3; /* Pale Blue */
+}
+
+.team-link img {
+  width: 40px; /* Adjust the size as needed */
+  height: 40px; /* Keep it equal to width for a perfect circle */
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Ensures the image scales properly inside the circle */
+  border: 2px solid #ccc; /* Optional: Add a border for better visibility */
+  transition: transform 0.3s ease; /* Optional: Add hover effect */
+}
+
+.team-link img:hover {
+  transform: scale(1.1); /* Optional: Slight zoom on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-btn {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  .home-h2-section-title {
+    font-size: 24px;
+  }
+
+  .home-paragraph {
+    font-size: 16px;
+    margin: 0 10px;
+  }
+
+  .team-member-card {
+    width: 150px;
+  }
+
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Main container holding the realm cards */
+.realms-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 equal columns */
+  grid-auto-rows: auto; /* Automatic row heights based on content */
+  gap: 20px; /* Space between cards */
+  margin: 0 auto; /* Center the grid on the page */
+  padding: 20px; /* Space inside the container */
+  max-width: 1200px; /* Constrain the grid width */
+  width: 100%; /* Allow the grid to adapt to screen width */
+  box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Styling for each individual realm card */
+.realm-card {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #aedfff;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.realm-card:hover {
+  transform: translateY(-10px); /* Lifts the card up by 10px */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds a stronger shadow */
+}
+
+/* Realm image styling */
+.realm-img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Realm title */
+.realm-title {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Realm description */
+.realm-description {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 1024px) {
+  .realms-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .realms-container {
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Stack all cards vertically */
+  }
+}
