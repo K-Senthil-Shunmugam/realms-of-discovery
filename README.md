@@ -69,13 +69,15 @@ The backend handles game logic, user authentication, and database interactions, 
 ## Installation and Deployment
 
 ### 1. Clone the Repository
-bash git clone https://github.com/yourusername/realms-of-discovery.git
+```console
+git clone https://github.com/yourusername/realms-of-discovery.git
 cd realms-of-discovery
-
+```
 
 ### 2. Build and Run Docker Containers
-bash docker-compose up --build
-
+```console
+docker-compose up --build
+```
 
 ### 3. Update Database Configuration
 Modify the config.py file in back-end/ to include your MongoDB connection link.
