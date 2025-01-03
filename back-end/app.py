@@ -91,19 +91,6 @@ def perform_action():
     # Default the predicted action to the user-provided action
     predicted_action = action
 
-    # Try to get the prediction from the model
-    try:
-        response = requests.post("http://192.168.192.25:5500/predict", json={"command": action})
-
-        # If the response is successful, use the predicted action
-        if response.status_code == 200:
-            prediction = response.json()
-            predicted_action = prediction.get('command')
-    
-    except requests.RequestException:
-        # If the request fails (model unreachable or other issues), fall back to user-provided action
-        pass
-
     # Now, find the game session for the given account_id
     game = game_sessions.get(account_id)
 
